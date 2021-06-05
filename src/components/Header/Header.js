@@ -14,7 +14,9 @@ import './Header.css';
 export default function Header() {
   let location = useLocation();
   let cart = useSelector((state) => state.cartReducer)
-  console.log('cart ', cart)
+  const quatityOfProducts = cart.reduce((sum, item) => sum += item.qtd, 0)
+  const sumOfProducts = cart.reduce((sum, item) => sum += item.qtd * Number(item.price), 0)
+
   return (
     <Router>
       <Container xs={2} md={4} lg={6}>
@@ -25,7 +27,8 @@ export default function Header() {
           <Nav.Item>
             <Nav.Link href="/cart">Carrinho</Nav.Link>
           </Nav.Item>
-          {cart && cart.length ? <span className="number-itens">{cart.length}</span> : null}
+          {quatityOfProducts ? <span className="number-itens">{quatityOfProducts}</span> : null}
+          {sumOfProducts ? <span className="number-itens">{sumOfProducts}</span> : null}
         </Nav>
       </Container>
       <Switch>

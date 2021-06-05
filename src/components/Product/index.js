@@ -16,6 +16,11 @@ const Product = ({product, cart}) => {
           <Card.Text>
             {product.price}
           </Card.Text>
+          {cart &&
+            <Card.Text>
+              Quantidade: {product.qtd}
+            </Card.Text>
+          }
         </Card.Body>
         {
           cart ?
