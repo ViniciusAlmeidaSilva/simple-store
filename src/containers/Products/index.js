@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import api from '../../boot/client';
-import { Container, Spinner, Row } from 'react-bootstrap';
+import { Container, Spinner, Row, Col } from 'react-bootstrap';
 import Product from '../../components/Product';
 
 const Products = () => {
@@ -26,10 +26,10 @@ const Products = () => {
     }
   }
 
-  if(!data.length && loading) return <Container><Spinner animation="border" /></Container>
+  if(!data.length && loading) return <Container><Row style={{textAlign: 'center'}}><Col><Spinner animation="border" /></Col></Row></Container>
   if(errorMessage) return <Container>{errorMessage}</Container>
   return (
-    <Container>
+    <Container className="product-container">
       <Row className="justify-content-md-center">
         {data.map((item, i) =>  <Product key={i} product={item} />)}
       </Row>

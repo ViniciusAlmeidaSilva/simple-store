@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Card, ListGroup, Col } from 'react-bootstrap';
-import {useDispatch, useSelector} from 'react-redux';
+import {Button, Card, Col} from 'react-bootstrap';
+import {useDispatch} from 'react-redux';
 import {addToCart} from '../../actions/addToCart';
 import {removeFromCart} from '../../actions/removeFromCart';
 
