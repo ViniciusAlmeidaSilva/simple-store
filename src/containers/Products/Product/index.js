@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button, Card, ListGroup, Col } from 'react-bootstrap';
+import {useDispatch, useSelector} from 'react-redux';
+import {addToCart} from '../../../actions/addToCart';
 
 const Product = ({product}) => {
+  const dispatch = useDispatch();
+
   return (
     <Col style={{marginTop: 20}}>
       <Card style={{ width: '18rem' }}>
@@ -13,7 +17,7 @@ const Product = ({product}) => {
           </Card.Text>
         </Card.Body>
         <Card.Body style={{textAlign: 'center'}}>
-          <Button variant="primary">Adicionar no carrinho</Button>
+          <Button variant="primary" onClick={() => dispatch(addToCart(product))}>Adicionar no carrinho</Button>
         </Card.Body>
       </Card>
     </Col>

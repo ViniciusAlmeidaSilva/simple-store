@@ -3,7 +3,8 @@ const INITIAL_STATE = []
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
+    case ADD_TO_CART:     
+      return [...state, action.payload];
     case REMOVE_FROM_CART:
    default:
     return state
