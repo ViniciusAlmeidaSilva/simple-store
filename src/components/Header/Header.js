@@ -14,7 +14,7 @@ import './Header.css';
 export default function Header() {
   let location = useLocation();
   let cart = useSelector((state) => state.cartReducer)
-
+  console.log('cart ', cart)
   return (
     <Router>
       <Container xs={2} md={4} lg={6}>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import api from '../../boot/client';
 import { Container, Spinner, Row } from 'react-bootstrap';
-import Product from './Product';
+import Product from '../../components/Product';
 
 const Products = () => {
   const [data, setData] = useState([]);
