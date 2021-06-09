@@ -7,16 +7,15 @@ import {
 } from "react-router-dom";
 import Produtcs from '../../containers/Products';
 import Cart from '../../containers/Cart';
-import { Nav, Container } from 'react-bootstrap';
+import { Nav, Container, Col } from 'react-bootstrap';
 import {useSelector} from 'react-redux';
 import './Header.css';
 import img from '../../images/background.jpeg'
 
-export default function Header() {
+export default function Header(props) {
   let location = useLocation();
   let cart = useSelector((state) => state.cartReducer)
   const quatityOfProducts = cart.reduce((sum, item) => sum += item.qtd, 0)
-  const sumOfProducts = cart.reduce((sum, item) => sum += item.qtd * Number(item.price), 0)
 
   return (
     <Router>
@@ -31,8 +30,10 @@ export default function Header() {
           <Nav.Item>
             <Nav.Link href="/cart">Carrinho</Nav.Link>
           </Nav.Item>
-          {quatityOfProducts ? <span className="number-itens">{quatityOfProducts}</span> : null}
-          {sumOfProducts ? <span className="number-itens">{sumOfProducts}</span> : null}
+          {quatityOfProducts ? <span className="number-itens" onClick={() => {
+            props.history.push('/cart')
+            window.location.reload();
+          }}>{quatityOfProducts}</span> : null}
         </Nav>
       </Container>
       <Switch>

@@ -1,9 +1,12 @@
 .number-itens {
-  background: #f00;
+  background: rgb(57, 8, 104);
   width: 25px;
   height: 25px;
   border-radius: 50%;
   text-align: center;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .img-header {

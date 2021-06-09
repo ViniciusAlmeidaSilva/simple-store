@@ -27,7 +27,7 @@ const Cart = () => {
         {productsCart.map((item, i) => <CartItem key={i} {...item} />)}
           <Col>
             <Row className="justify-content-end"><span style={{fontWeight: 'bolder'}}>Total: R$: {sumOfProducts.toFixed(2)}</span></Row>
-            <Row className="justify-content-end"><span className='delete-all' onClick={() => dispatch(removeAllFromCart())}>Excluir todos os itens</span></Row>
+            <Row className="justify-content-end"><span className='delete-all' onClick={() => dispatch(removeAllFromCart())}>Excluir todos os itens do carrinho</span></Row>
           </Col>
       </Container>
       }

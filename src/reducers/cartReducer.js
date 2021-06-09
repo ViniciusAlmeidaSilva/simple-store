@@ -17,11 +17,16 @@ export default (state = INITIAL_STATE, action) => {
         //keep the same state
         const newState = state.filter((item) => item.id !== action.payload.id)
 
+        //order all by id
+        const newStateOrdered = [...newState, updateProduct].sort((a, b) => a.id - b.id);
+
         //return the state with new product updated
-        return [...newState, updateProduct];
+        return newStateOrdered;
       } else {
         // if it is first product in the cart will add key qtd = 1
-        return [...state, {...action.payload, qtd: 1}]
+        // order all by id
+        const newStateOrdered = [...state, {...action.payload, qtd: 1}].sort((a, b) => a.id - b.id);
+        return newStateOrdered
       }
 
     case REMOVE_FROM_CART:
@@ -37,13 +42,19 @@ export default (state = INITIAL_STATE, action) => {
         //remove old state for product
         const newState = state.filter((item) => item.id !== action.payload.id)
 
+        // order all by id
+        const newStateOrdered = [...newState, {...product }].sort((a, b) => a.id - b.id);
+
         //add a product with correct quantity
-        return [...newState, {...product }]
+        return newStateOrdered
       }
 
       // if there's just one quantity of product it gonna be removed
       const newState = state.filter((item) => item.id !== action.payload.id)
-      return [...newState]
+      // order all by id
+      const newStateOrdered = newState.sort((a, b) => a.id - b.id);
+
+      return newStateOrdered
     case REMOVE_ALL_FROM_CART:
       return INITIAL_STATE
    default:
