@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Produtcs from '../../containers/Products';
 import Cart from '../../containers/Cart';
-import { Nav, Container, Col } from 'react-bootstrap';
+import { Nav, Container } from 'react-bootstrap';
 import {useSelector} from 'react-redux';
 import './Header.css';
 import img from '../../images/background.jpeg'
@@ -20,7 +20,7 @@ export default function Header(props) {
   return (
     <Router>
       <Container justify-center>
-        <img className='img-header' src={img} />
+        <img className='img-header' src={img} alt="header" />
       </Container>
       <Container xs={2} md={4} lg={6}>
         <Nav variant="pills" defaultActiveKey={`${location.pathname}`}>

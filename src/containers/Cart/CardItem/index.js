@@ -13,7 +13,7 @@ const CartItem = (item) => {
     <React.Fragment>
       <Row lg={12} md={12} style={{textAlign: 'center'}}>
         <Col>
-          <img className='img-cart' src={item.image} />
+          <img className='img-cart' src={item.image} alt=''/>
         </Col>
         <Col>
           <span className='item-name'>{item.name}</span>

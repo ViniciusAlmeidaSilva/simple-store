@@ -2,7 +2,6 @@ import React from 'react';
 import {Button, Card, Col, Row} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {addToCart} from '../../actions/addToCart';
-import {removeFromCart} from '../../actions/removeFromCart';
 import './Product.css';
 
 const Product = ({product}) => {

@@ -17,9 +17,7 @@ const Products = () => {
       setLoading(true)
       const result = await api('api/v1/product');
       setData(result.data)
-      if(data.length) {
-        setLoading(false)
-      }
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       setErrorMessage('Ocorreu um problema, por favor tentar novamente mais tarde.')

@@ -20,7 +20,7 @@ const Cart = () => {
               <span>Seu carrinho está vazio!</span>
             </Col>
           </Row>
-          <img className='img-cart' src={img} />
+          <img className='img-cart' src={img} alt='' />
         </Container>
         :
         <Container className="container-card">
