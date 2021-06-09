@@ -19,6 +19,9 @@ const CartItem = (item) => {
           <span className='item-name'>{item.name}</span>
         </Col>
         <Col>
+          <Col>
+            <span style={{fontWeight: 'lighter', fontSize: 12}}>Qtd:</span>
+          </Col>
           <span className="button-card minus" onClick={() => dispatch(removeFromCart(item))}>-</span>
           {item.qtd}
           <span className="button-card plus" onClick={() => dispatch(addToCart(item))}>+</span>
