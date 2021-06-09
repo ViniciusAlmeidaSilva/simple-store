@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux';
-import Product from '../../components/Product'
-import img from '../../images/empty-cart.png'
-import CartItem from './CardItem'
+import img from '../../images/empty-cart.png';
+import CartItem from './CardItem';
+import {removeAllFromCart} from '../../actions/removeAllFromCart';
 import './Cart.css';
 
 const Cart = () => {
@@ -27,7 +27,7 @@ const Cart = () => {
         {productsCart.map((item, i) => <CartItem key={i} {...item} />)}
           <Col>
             <Row className="justify-content-end"><span style={{fontWeight: 'bolder'}}>Total: R$: {sumOfProducts.toFixed(2)}</span></Row>
-            <Row className="justify-content-end"><span className='delete-all' onClick={() =>console.log('aquii')}>Excluir todos os itens</span></Row>
+            <Row className="justify-content-end"><span className='delete-all' onClick={() => dispatch(removeAllFromCart())}>Excluir todos os itens</span></Row>
           </Col>
       </Container>
       }

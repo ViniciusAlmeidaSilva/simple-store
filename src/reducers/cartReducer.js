@@ -1,4 +1,4 @@
-import {ADD_TO_CART, REMOVE_FROM_CART} from '../utils/const';
+import {ADD_TO_CART, REMOVE_FROM_CART, REMOVE_ALL_FROM_CART} from '../utils/const';
 const INITIAL_STATE = []
 
 export default (state = INITIAL_STATE, action) => {
@@ -44,6 +44,8 @@ export default (state = INITIAL_STATE, action) => {
       // if there's just one quantity of product it gonna be removed
       const newState = state.filter((item) => item.id !== action.payload.id)
       return [...newState]
+    case REMOVE_ALL_FROM_CART:
+      return INITIAL_STATE
    default:
     return state
   }
