@@ -28,7 +28,7 @@ const Products = () => {
   if(errorMessage) return <Container>{errorMessage}</Container>
   return (
     <Container className="product-container">
-      <Row className="justify-content-md-center">
+      <Row style={{justifyContent: 'center'}}>
         {data.map((item, i) =>  <Product key={i} product={item} />)}
       </Row>
     </Container>
