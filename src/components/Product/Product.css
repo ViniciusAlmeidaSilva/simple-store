@@ -1,0 +1,44 @@
+
+.btn-adc-cart {
+  background-color: rgb(226, 195, 255);
+  border-color: rgb(226, 195, 255);
+  color: rgb(57, 8, 104);
+  font-weight: bolder;
+}
+.card-title{
+  color: blueviolet;
+  font-weight: normal;
+}
+.card-container {
+  padding: 10px;
+}
+
+.card-text {
+  color: black;
+  font-weight: lighter;
+}
+
+.bottom-card {
+  text-align: center;
+}
+
+.btn-adc-cart:hover {
+  background-color: rgb(57, 8, 104);
+  border-color: rgb(226, 195, 255);
+  color: white;
+  font-weight: bolder;
+}
+
+.btn-adc-cart:active {
+  background-color: rgb(57, 8, 104);
+  border-color: rgb(226, 195, 255);
+  color: white;
+  font-weight: bolder;
+}
+
+.btn-adc-cart:focus {
+  background-color: rgb(57, 8, 104);
+  border-color: rgb(226, 195, 255);
+  color: white;
+  font-weight: bolder;
+}

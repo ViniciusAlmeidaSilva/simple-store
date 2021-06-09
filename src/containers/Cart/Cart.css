@@ -1,0 +1,16 @@
+.img-cart {
+  width: 50%;
+}
+
+.container-card {
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+  height: 100%;
+}
+.delete-all {
+  font-weight: lighter; 
+  color: red;
+  margin-top: 20px;
+}

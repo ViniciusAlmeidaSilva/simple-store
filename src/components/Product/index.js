@@ -1,39 +1,30 @@
 import React from 'react';
-import {Button, Card, Col} from 'react-bootstrap';
+import {Button, Card, Col, Row} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {addToCart} from '../../actions/addToCart';
 import {removeFromCart} from '../../actions/removeFromCart';
+import './Product.css';
 
-const Product = ({product, cart}) => {
+const Product = ({product}) => {
   const dispatch = useDispatch();
 
   return (
-    <Col style={{marginTop: 20}}>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={`${product.image}`} />
-        <Card.Body>
-          <Card.Title>{`${product.name}`}</Card.Title>
-          <Card.Text>
-            {product.price}
-          </Card.Text>
-          {cart &&
-            <Card.Text>
-              Quantidade: {product.qtd}
+    <Row sm={12} style={{textAlign: 'center', padding: 5}}>
+      <Col style={{marginTop: 20}}>
+        <Card style={{ width: '18rem' }} className='card-container'>
+          <Card.Img className='card-image' src={`${product.image}`} />
+          <Card.Body>
+            <Card.Title className='card-title'>R$ {product.price}</Card.Title>
+            <Card.Text className='card-text'>
+              {`${product.name}`}
             </Card.Text>
-          }
-        </Card.Body>
-        {
-          cart ?
-          <Card.Body style={{textAlign: 'center'}}>
-            <Button variant="urgent" onClick={() => dispatch(removeFromCart(product))}>Remover</Button>
+            <div className='bottom-card'>
+              <Button className='btn-adc-cart' onClick={() => dispatch(addToCart(product))}>Adicionar no carrinho</Button>
+            </div>
           </Card.Body>
-          :
-          <Card.Body style={{textAlign: 'center'}}>
-            <Button variant="primary" onClick={() => dispatch(addToCart(product))}>Adicionar no carrinho</Button>
-          </Card.Body>
-        }
-      </Card>
-    </Col>
+        </Card>
+      </Col>
+    </Row>
   );
 }
 

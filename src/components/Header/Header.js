@@ -10,6 +10,7 @@ import Cart from '../../containers/Cart';
 import { Nav, Container } from 'react-bootstrap';
 import {useSelector} from 'react-redux';
 import './Header.css';
+import img from '../../images/background.jpeg'
 
 export default function Header() {
   let location = useLocation();
@@ -19,6 +20,9 @@ export default function Header() {
 
   return (
     <Router>
+      <Container justify-center>
+        <img className='img-header' src={img} />
+      </Container>
       <Container xs={2} md={4} lg={6}>
         <Nav variant="pills" defaultActiveKey={`${location.pathname}`}>
           <Nav.Item>
