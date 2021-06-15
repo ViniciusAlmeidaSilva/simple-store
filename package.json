@@ -15,8 +15,10 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "redux-mock-store": "^1.5.4",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
+    "sinon": "^11.1.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -45,7 +47,11 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.14.5",
+    "chai": "^4.3.4",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6"
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jasmine-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
+    "react-test-renderer": "^17.0.2"
   }
 }
