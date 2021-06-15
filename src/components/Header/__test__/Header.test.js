@@ -5,14 +5,13 @@ import { expect } from 'chai';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom';
-import { render } from 'react-testing-library';
 import Header from '../Header';
 
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({
-    pathname: 'localhost:3000/products'
+    pathname: 'localhost:3000'
   }),
 }));
 
@@ -32,10 +31,6 @@ describe('<Header /> when there is no item in cart', () => {
 
   it('render a root component path', () => {
     expect(location.pathname).equal('/');
-  });
-
-  it('render a root component path', () => {
-    expect(quatityOfProducts).equal(undefined);
   });
 
 });
