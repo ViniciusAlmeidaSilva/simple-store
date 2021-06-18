@@ -11,12 +11,13 @@ import { Nav, Container } from 'react-bootstrap';
 import {useSelector} from 'react-redux';
 import './Header.css';
 import img from '../../images/background.jpeg'
+import CartSaving from '../../components/CartSaving'
 
 export default function Header(props) {
   let location = useLocation();
   let cart = useSelector((state) => state.cartReducer);
   const quatityOfProducts = cart.reduce((sum, item) => sum += item.qtd, 0)
-  console.log('quatityOfProducts ', quatityOfProducts)
+
   return (
     <Router>
       <Container justify-center>
@@ -30,7 +31,7 @@ export default function Header(props) {
           <Nav.Item>
             <Nav.Link href="/cart">Carrinho</Nav.Link>
           </Nav.Item>
-          {quatityOfProducts ? <span className="number-itens" onClick={() => {props.history.push('/cart'); window.location.reload();}}>{quatityOfProducts}</span> : null}
+          <CartSaving quatityOfProducts={quatityOfProducts} {...props} />
         </Nav>
       </Container>
       <Switch>

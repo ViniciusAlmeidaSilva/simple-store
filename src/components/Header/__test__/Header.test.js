@@ -16,7 +16,6 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('<Header /> when there is no item in cart', () => {
-
   let wrapper;
 
   beforeAll(() => {
